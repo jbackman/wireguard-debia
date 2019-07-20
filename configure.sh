@@ -21,7 +21,7 @@ make
 # "Install" it 
 cp wireguard-go /usr/local/bin 
 mkdir -p ${CFGDIR}
-
+cd ${CFGDIR}
 umask 077  # This makes sure credentials don't leak in a race condition.
 wg genkey | tee privatekey | wg pubkey > publickey
 
