@@ -4,9 +4,9 @@ CFGDIR="/etc/wireguard"
 INTERFACE="venet0"
 #INTERFACE="ens3"
 
-echo "deb http://deb.debian.org/debian/ unstable main" > /etc/apt/sources.list.d/unstable.list 
+echo "deb  [trusted=yes] http://deb.debian.org/debian/ unstable main" > /etc/apt/sources.list.d/unstable.list 
 printf 'Package: *\nPin: release a=unstable\nPin-Priority: 90\n' > /etc/apt/preferences.d/limit-unstable 
-echo "APT::Get::AllowUnauthenticated \"true\";">/etc/apt/apt.conf.d/99allunathenticated
+echo 'APT::Get::AllowUnauthenticated "true";' > /etc/apt/apt.conf.d/99allunathenticated
 apt update 
 apt install wireguard-tools --no-install-recommends 
 
