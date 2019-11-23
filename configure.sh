@@ -11,18 +11,18 @@ apt update
 apt install wireguard-tools --no-install-recommends 
 
 cd /tmp 
-type wget>/dev/null 2>&1 || { apt install wget -y }
+type wget>/dev/null 2>&1 || { apt install wget -y; }
 wget https://dl.google.com/go/go${GOVER}.linux-amd64.tar.gz 
-type tar>/dev/null 2>&1 || { apt install tar -y }
+type tar>/dev/null 2>&1 || { apt install tar -y; }
 tar zvxf go${GOVER}.linux-amd64.tar.gz 
 mv go /opt/go${GOVER} 
 ln -s /opt/go${GOVER}/bin/go /usr/local/bin/go 
 
 cd /usr/local/src 
-type git>/dev/null 2>&1 || { apt install git -y }
+type git>/dev/null 2>&1 || { apt install git -y; }
 git clone https://git.zx2c4.com/wireguard-go 
 cd wireguard-go 
-type make>/dev/null 2>&1 || { apt install make -y }
+type make>/dev/null 2>&1 || { apt install make -y; }
 make 
 # "Install" it 
 cp wireguard-go /usr/local/bin 
