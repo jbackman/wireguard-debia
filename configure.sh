@@ -1,5 +1,5 @@
 #!/bin/bash
-GOVER="1.12.7"
+GOVER="1.13.4"
 CFGDIR="/etc/wireguard"
 INTERFACE="venet0"
 
